@@ -37,7 +37,7 @@ self.addEventListener("activate", function (evt) {
 });
 //fetch
 self.addEventListener("fetch", evt => {
-    if (evt.request.url.includes('/api/')) {
+    if (evt.request.url.includes('/api/transaction')) {
         console.log('fetch data', evt.request.url);
         evt.respondWith(
             caches.open(DATA_CACHE_NAME).then(cache => {
